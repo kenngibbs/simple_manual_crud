@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h3>All Names</h3>
+{% for eachName in allInfo %}
+    <h5>{{ eachName.name }}
+<!--        <a href="/edit/{{eachName.id}}/">Edit</a>-->
+        <a href="{% url 'edit' eachName.id %}">Edit</a> or
+        <a href="{% url 'delete' eachName.id %}">Delete</a>
+    </h5>
+{% endfor %}
+<form method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button>Submit</button>
+</form>
+</body>
+</html>
