@@ -1,1 +1,4 @@
 .idea/
+crudApp/__pycache__/
+crudProject/__pycache__/
+crudApp/migrations/__pycache__/
